@@ -1,4 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;800&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
 
 :root {
   --main-color: #6c5ce7;
@@ -9,6 +13,115 @@
   --font-smaller: 14px;
   --font-bigger: 20px;
 }
+
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
 
 * {
   margin: 0;
@@ -205,6 +318,55 @@ form .checbox input {
   height: auto;
 }
 
+
+/* Animation for input forms */
+input:focus,
+select:focus {
+  border-color: var(--main-color);
+  box-shadow: 0 0 8px var(--secondary-color);
+  animation: focusAnim 0.5s ease-in-out;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Keyframes for input animation */
+@keyframes focusAnim {
+  0% {
+    transform: scale(1);
+    background-color: transparent;
+  }
+  50% {
+    transform: scale(1.05);
+    background-color: #f3f2ff;
+  }
+  100% {
+    transform: scale(1);
+    background-color: transparent;
+  }
+}
+
+/* Animation for checkbox */
+.checkbox input:focus {
+  animation: checkboxFocusAnim 0.5s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+}
+
+@keyframes checkboxFocusAnim {
+  0% {
+    transform: scale(1);
+    border: 2px solid var(--lighter-color);
+  }
+  50% {
+    transform: scale(1.1);
+    border: 2px solid var(--main-color);
+  }
+  100% {
+    transform: scale(1);
+    border: 2px solid var(--secondary-color);
+  }
+}
+
+
+
 form > div:not(.btn-group) {
   display: none;
   -webkit-animation: fadeIn 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
@@ -280,7 +442,27 @@ form > div.active {
   margin-top: 20px;
 }
 
+/* Apply Poppins font to all placeholders */
+::placeholder {
+  font-family: "Poppins", sans-serif;
+  color: var(--light-color);
+}
+
+/* Apply Poppins font to all buttons */
+.btn-group [class*="btn-"] {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--main-color);
+  color: white;
+  padding: 1em 2.5em;
+  border: 4px solid var(--secondary-color);
+  border-radius: 30px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s, border-color 0.3s ease-out;
+  transition: background-color 0.3s, border-color 0.3s ease-out;
+}
+
 .Login a {
+  font-family: "Poppins", sans-serif;
   margin-top: 10px;
   color: white;
   display: flex;
@@ -295,7 +477,8 @@ form > div.active {
   cursor: pointer;
   text-align: center;
   font-size: 16px;
-} 
+}
+ 
 .login-prompt {
   margin-top: 15px;
   font-size: 16px;
@@ -359,5 +542,3 @@ form > div.active {
     display: block;
   }
 }
-
-

@@ -71,6 +71,20 @@ a {
     outline-color: var(--secondary-color);
     transition: border-color 0.3s;
 }
+/* Apply only input form animation effect */
+.login-form input:focus {
+    border-color: var(--main-color);
+    box-shadow: 0 0 8px var(--secondary-color);
+    animation: focusAnim 0.5s ease-in-out;
+}
+
+/* Animation for focus effect */
+@keyframes focusAnim {
+    0% { transform: scale(1); background-color: transparent; }
+    50% { transform: scale(1.05); background-color: #f3f2ff; }
+    100% { transform: scale(1); background-color: transparent; }
+}
+
 
 .login-form input:focus {
     border-color: var(--main-color);
@@ -80,17 +94,14 @@ a {
     font-size: 16px;
     color: var(--dark-color);
 }
-
 .signup-prompt a {
     color: var(--main-color);
     font-weight: bold;
     transition: color 0.3s;
 }
-
 .signup-prompt a:hover {
     color: var(--secondary-color);
 }
-
 
 .btn-login {
     margin-top: 7px;
@@ -116,4 +127,25 @@ a {
     .login-form {
         padding: 3em;
     }
+}
+
+
+
+
+
+
+
+
+.signup-prompt {
+    margin-top: 10px;
+    font-size: 16px;
+    color: var(--dark-color);
+}
+.signup-prompt a {
+    color: var(--main-color);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.signup-prompt a:hover {
+    color: var(--secondary-color);
 }

@@ -3,6 +3,7 @@ const prevButton = document.querySelector('.btn-prev');
 const steps = document.querySelectorAll('.step');
 const form_steps = document.querySelectorAll('.form-step');
 const submitBtn = document.querySelector('.btn-submit');
+const loginPrompt = document.querySelector('.login-prompt'); // Select the login prompt
 let active = 1;
 
 nextButton.addEventListener('click', async () => {
@@ -44,6 +45,13 @@ const updateProgress = () => {
 
     prevButton.disabled = active === 1;
     nextButton.disabled = active === steps.length;
+
+    // Hide or show the login prompt based on the current step
+    if (active > 1) {
+        loginPrompt.style.display = 'none'; // Hide login prompt
+    } else {
+        loginPrompt.style.display = 'block'; // Show login prompt
+    }
 };
 
 // Validate current form step
