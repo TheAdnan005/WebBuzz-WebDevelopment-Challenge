@@ -121,6 +121,7 @@ const validateInput = (input) => {
 };
 
 const submitForm = async () => {
+    // Gather user data from form inputs
     const userData = {
         firstName: document.querySelector('input[placeholder="e.g. Adnan"]')?.value || "",
         lastName: document.querySelector('input[placeholder="e.g. Abrar"]')?.value || "",
@@ -134,11 +135,12 @@ const submitForm = async () => {
         email: document.querySelector('input[placeholder="Your email address"]')?.value || "",
         username: document.querySelector('input[placeholder="Username"]')?.value || "",
         password: document.querySelector('input[placeholder="Password"]')?.value || "",
-        confirmPassword: document.querySelector('input[placeholder="Confirm Password"]')?.value || "",
+        // Remove confirmPassword from the object as it's not needed for the backend
         newsletter: document.querySelector('input[type="checkbox"]')?.checked || false,
     };
 
     try {
+        // Update the fetch URL to point to the correct server port
         const response = await fetch('http://localhost:5000/api/register', {
             method: 'POST',
             headers: {
@@ -150,10 +152,11 @@ const submitForm = async () => {
         if (response.ok) {
             alert('Registration successful!');
         } else {
-            alert('Registration failed.');
+            alert('Registration failed. Please try again.');
         }
     } catch (error) {
         console.error('Error:', error);
+        alert('An error occurred. Please try again.');
     }
 };
 

@@ -7,15 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Multi Step Form</title>
     <link rel="stylesheet" href="signUp.css" />
+    <link rel="stylesheet" href="css/style.css"> <!-- Link to navbar CSS -->
+    <script src="js/navbar.js" defer></script>
 </head>
 
 <body>
+    <div id="navbar"></div>
+    <script>
+        console.log("entered scr");
+        
+        function loadNavbar() {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+                    initializeNavbar();
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+        }
+
+        window.onload = loadNavbar;
+    </script>
     <div id="page" class="site">
         <div class="container">
             <div class="form-box">
                 <div class="progress">
                     <div class="logo">
-                        <a href="/"><span>.web</span>Buzz</a>
+                        <a href="/"><span>Sign</span>Up</a>
                     </div>
                     <ul class="progress-steps">
                         <li class="step active">
@@ -30,9 +48,14 @@
                             <span>3</span>
                             <p>Security<br /><span>30 secs to complete</span></p>
                         </li>
+                        
+                        
                     </ul>
+                    <div class=" login-prompt">
+                        <p>Already have an Account? <a href="/login.html" class="btn-login">Login</a></p>
+                    </div>
+                    
                 </div>
-
                 <form action="">
                     <!-- Step 1: Personal Information -->
                     <div class="form-one form-step">
@@ -90,7 +113,7 @@
                                 <option value="Afghanistan">Afghanistan</option>
                                 <option value="Afghanistan">Afghanistan</option>
                                 <!-- Add the rest of the country options here -->
-                                
+
                                 <option value="Zimbabwe">Zimbabwe</option>
                             </select>
                         </div>
@@ -124,10 +147,14 @@
                         <button type="button" class="btn-next">Next Step</button>
                         <button type="button" class="btn-submit">Submit</button>
                     </div>
+                    
+                    
                 </form>
+
             </div>
         </div>
     </div>
     <script src="signUp.js"></script>
 </body>
+
 </html>
