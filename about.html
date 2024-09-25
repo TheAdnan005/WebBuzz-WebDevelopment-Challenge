@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>xyz</title>
+  <link rel="stylesheet" href="css/timeline.css">
+  <link rel="stylesheet" href="css/style.css"> <!-- Link to navbar CSS -->
+  <script src="js/navbar.js" defer></script>
+</head>
+
+  
+<body>
+
+  <div id="overlay" class="overlay hidden">
+    <div class="overlay-content">
+      <div id="butDiv"><button id="closeOverlay">X</button></div>
+
+      <h1>Team</h1>
+      <div class="team">
+        <div class="img-cont">
+          <img src="resources/images/p2.jpg" alt="Name 1">
+          <p>Player 1</p>
+        </div>
+        <div class="img-cont">
+          <img src="resources/images/p3.jpg" alt="Name 2">
+          <p>Player 2</p>
+        </div>
+        <div class="img-cont">
+          <img src="resources/images/p1.jpg" alt="Name 3">
+          <p>Player 3</p>
+        </div>
+        <div class="img-cont">
+          <img src="resources/images/p4.webp" alt="Name 4">
+          <p>Player 4</p>
+        </div>
+        <div class="img-cont">
+          <img src="resources/images/p5.webp" alt="Name 5">
+          <p>Player 5</p>
+        </div>
+        <div class="img-cont">
+          <img src="resources/images/p6.png" alt="Name 6">
+          <p>Player 6</p>
+        </div>
+        <div class="img-cont">
+          <img src="resources/images/p7.jpg" alt="Name 7">
+          <p>Player 7</p>
+        </div>
+        <div class="img-cont">
+          <img src="resources/images/p8.jpg" alt="Name 8">
+          <p>Player 8</p>
+        </div>
+        <div class="img-cont">
+          <img src="resources/images/p9.jpeg" alt="Name 9">
+          <p>Player 9</p>
+        </div>
+        <div class="img-cont">
+          <img src="resources/images/p10.jpg" alt="Name 10">
+          <p>Player 10</p>
+        </div>
+        <div class="img-cont">
+          <img src="resources/images/p11.webp" alt="Name 11">
+          <p>Player 11</p>
+        </div>
+      </div>
+      <h1>Tournaments</h1>
+      <div class="tournaments">
+        <div class="tourList">
+          <h3>Indian Premier League (IPL)</h3>
+          <p>
+            The IPL is a professional Twenty20 cricket league in India, contested by franchise teams representing
+            different cities. It is one of the most popular and lucrative cricket leagues globally.
+          </p>
+          <p><strong>Duration:</strong> March - May</p>
+        </div>
+
+        <div class="tourList">
+          <h3>Ranji Trophy</h3>
+          <p>
+            The Ranji Trophy is a domestic first-class cricket championship played in India between different regional
+            and state cricket teams.
+          </p>
+          <p><strong>Duration:</strong> November - February</p>
+        </div>
+
+        <div class="tourList">
+          <h3>Syed Mushtaq Ali Trophy</h3>
+          <p>
+            A Twenty20 cricket domestic championship in India. This competition is named after the famous Indian
+            cricketer Syed Mushtaq Ali and serves as a breeding ground for IPL and international talents.
+          </p>
+          <p><strong>Duration:</strong> January - February</p>
+        </div>
+
+        <div class="tourList">
+          <h3>Vijay Hazare Trophy</h3>
+          <p>
+            The Vijay Hazare Trophy is an annual limited-overs cricket domestic competition played in India. It is named
+            after the legendary cricketer Vijay Hazare.
+          </p>
+          <p><strong>Duration:</strong> September - December</p>
+        </div>
+
+        <div class="tourList">
+          <h3>Duleep Trophy</h3>
+          <p>
+            The Duleep Trophy is a domestic first-class cricket competition contested between teams representing
+            geographical zones of India. It is a great platform for players to prove their mettle.
+          </p>
+          <p><strong>Duration:</strong> September - October</p>
+        </div>
+
+        <div class="tourList">
+          <h3>Deodhar Trophy</h3>
+          <p>
+            The Deodhar Trophy is a one-day cricket competition in Indian domestic cricket, named after Prof. D. B.
+            Deodhar. It is considered the “cricket supreme” cup in India.
+          </p>
+          <p><strong>Duration:</strong> February - March</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div id="navbar">
+    <div class="header">
+      <!-- Menu icon on the left -->
+      <div class="navbar-toggle" id="navbar-toggle">
+        <div class="icon-bar">
+          <img id="navbar-icon" src="resources/images/cricket-wicket-filled-stroke-by-Vexels.svg" alt="bat" />
+        </div>
+      </div>
+
+      <!-- Logo on the right -->
+      <div class="brand">
+        <a href="index.html">Logo</a>
+      </div>
+    </div>
+
+    <!-- The sidebar menu -->
+    <div class="navbar-collapse" id="navbar-collapse">
+      <a href="login.html" id="login-link">
+        <div class="nav-elements">Login</div>
+      </a>
+      <a href="upcoming.html">
+        <div class="nav-elements">Upcoming events</div>
+      </a>
+      <a href="about.html">
+        <div class="nav-elements">About</div>
+      </a>
+
+      <div class="nav-elements">Contact</div>
+      <div class="nav-elements">Settings</div>
+      <div class="Logout hide bottom">Logout</div>
+    </div>
+  </div>
+  <section class="intro">
+    <div class="container">
+      <h1>Vertical Timeline &darr;</h1>
+    </div>
+  </section>
+
+  <section class="timeline">
+    <ul>
+      <li>
+        <div class="timeline-item">
+          <time>2000</time>
+          <p class="summary">India's iconic win in the ICC Knockout Trophy (now Champions Trophy).</p>
+          <p class="more-info" style="display: none;">India beat South Africa to win their first major ICC title in 17
+            years. <a href="#" id="openOverlay">Open Overlay</a></p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-item">
+          <time>2002</time>
+          <p class="summary">India and Sri Lanka share the ICC Champions Trophy.</p>
+          <p class="more-info" style="display: none;">The final match between India and Sri Lanka was washed out twice
+            by rain, resulting in the teams sharing the trophy. <a href="#" id="openOverlay">Open Overlay</a></p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-item">
+          <time>2003</time>
+          <p class="summary">India reach the ICC World Cup Final.</p>
+          <p class="more-info" style="display: none;">India had a phenomenal World Cup campaign under Sourav Ganguly,
+            but lost to Australia in the final. <a href="#" id="openOverlay">Open Overlay</a></p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-item">
+          <time>2004</time>
+          <p class="summary">India win historic Test series in Pakistan.</p>
+          <p class="more-info" style="display: none;">In 2004, India won their first-ever Test series in Pakistan,
+            cementing their dominance in Asia. <a href="#" id="openOverlay">Open Overlay</a></p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-item">
+          <time>2005</time>
+          <p class="summary">Sachin Tendulkar becomes the highest run-scorer in ODI history.</p>
+          <p class="more-info" style="display: none;">In 2005, Sachin Tendulkar surpassed the previous record for the
+            most runs in One Day Internationals. <a href="#" id="openOverlay">Open Overlay</a></p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-item">
+          <time>2007</time>
+          <p class="summary">India wins the inaugural ICC T20 World Cup.</p>
+          <p class="more-info" style="display: none;">India defeated Pakistan in a thrilling final in Johannesburg to
+            win the first-ever ICC T20 World Cup under MS Dhoni's captaincy. <a href="#" id="openOverlay">Open
+              Overlay</a></p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-item">
+          <time>2008</time>
+          <p class="summary">The Indian Premier League (IPL) launches.</p>
+          <p class="more-info" style="display: none;">The IPL revolutionized cricket by blending entertainment and
+            sport, attracting top international players. <a href="#" id="openOverlay">Open Overlay</a></p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-item">
+          <time>2009</time>
+          <p class="summary">India becomes the No.1 ranked Test team.</p>
+          <p class="more-info" style="display: none;">In 2009, India rose to the top of the ICC Test rankings for the
+            first time in their history. <a href="#" id="openOverlay">Open Overlay</a></p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-item">
+          <time>2010</time>
+          <p class="summary">Chennai Super Kings win their first IPL title.</p>
+          <p class="more-info" style="display: none;">Chennai Super Kings, led by MS Dhoni, won their first IPL title,
+            defeating Mumbai Indians in the final. <a href="#" id="openOverlay">Open Overlay</a></p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <script type="module" src="js/timeline.js"></script>
+  <script src="js/expandTimeline.js" defer></script>
+</body>
+
+</html>

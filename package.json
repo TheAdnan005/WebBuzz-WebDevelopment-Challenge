@@ -1,0 +1,12 @@
+{
+  "name": "webbuzz-webdevelopment-challenge",
+  "version": "1.0.0",
+  "description": "Website for XYZ Organization, a sports organization dedicated to conducting cricket tournaments in various formats. Your challenge is to create an interactive, cricket-themed website using React.js, Tailwind, CSS HTML etc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

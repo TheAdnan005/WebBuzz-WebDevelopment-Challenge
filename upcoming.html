@@ -1,47 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Scrolling Container</title>
-    <link rel="stylesheet" href="css/upcoming.css">
-    <link rel="stylesheet" href="css/style.css"> <!-- Link to navbar CSS -->
-    <script src="js/navbar.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Scrolling Container</title>
+  <link rel="stylesheet" href="css/upcoming.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Link to navbar CSS -->
+  <script src="js/navbar.js" defer></script>
 </head>
-<body style="cursor: url('resources/images/124163.cur'), auto;">
-    <div id="navbar"></div>
 
-    <script>
-        function loadNavbar() {
-            fetch('navbar.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('navbar').innerHTML = data;
-                    initializeNavbar();
-                })
-                .catch(error => console.error('Error loading navbar:', error));
-        }
+<body>
+  <div id="navbar">
+    <div class="header">
+      <!-- Menu icon on the left -->
+      <div class="navbar-toggle" id="navbar-toggle">
+        <div class="icon-bar">
+          <img id="navbar-icon" src="resources/images/cricket-wicket-filled-stroke-by-Vexels.svg" alt="bat" />
+        </div>
+      </div>
 
-        window.onload = loadNavbar;
-    </script>
-
-    <div class="image-container">
-        <div class="img-cont"><img src="resources/images/download.jpeg" alt="Image 1" /></div>
-        <div class="img-cont"><img src="resources/images/download (1).jpeg" alt="Image 2" /></div>
-        <div class="img-cont"><img src="resources/images/download.jpeg" alt="Image 3" /></div>
-        <div class="img-cont"><img src="resources/images/download (1).jpeg" alt="Image 4" /></div>
+      <!-- Logo on the right -->
+      <div class="brand">
+        <a href="index.html">Logo</a>
+      </div>
     </div>
 
-    <div><h1>All upcoming events</h1></div>
-    <div class="card-container">
-        <div class="card"><img src="resources/images/download.jpeg" alt="Card 1" /></div>
-        <div class="card">Card 2</div>
-        <div class="card">Card 3</div>
-        <div class="card">Card 4</div>
-        <div class="card">Card 5</div>
-        <div class="card">Card 6</div>
+    <!-- The sidebar menu -->
+    <div class="navbar-collapse" id="navbar-collapse">
+      <a href="login.html" id="login-link">
+        <div class="nav-elements">Login</div>
+      </a>
+      <a href="upcoming.html">
+        <div class="nav-elements">Upcoming events</div>
+      </a>
+      <a href="about.html"><div class="nav-elements">About</div></a>
+      
+      <div class="nav-elements">Contact</div>
+      <div class="nav-elements">Settings</div>
+      <div class="Logout hide bottom">Logout</div>
     </div>
+  </div>
 
-    <script src="js/upcoming.js"></script>
+  <div class="image-container">
+    <div class="img-cont">
+      <div class="background-image">
+        <img src="resources/images/download.jpeg" alt="Background Image" />
+      </div>
+      <div class="foreground-image">
+        <img src="resources/images/download.jpeg" alt="Foreground Image" />
+      </div>
+    </div>
+    <div class="img-cont">
+      <div class="background-image">
+        <img src="resources/images/download (1).jpeg" alt="Background Image" />
+      </div>
+      <div class="foreground-image">
+        <img src="resources/images/download (1).jpeg" alt="Foreground Image" />
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h1>All upcoming events</h1>
+  </div>
+  <div class="card-container">
+    <div class="card">
+      <img src="resources/images/event1.jpeg" alt="IPL 2024" />
+      <div class="card-content">
+        <h3>IPL 2024</h3>
+        <p>India's premier T20 tournament with teams from across the nation. Starts in March 2024.</p>
+      </div>
+      <a href=""><button class="book-btn">Book Tickets</button></a>
+    </div>
+    <div class="card">
+      <img src="resources/images/event2.jpeg" alt="ICC World Cup 2024" />
+      <div class="card-content">
+        <h3>ICC World Cup 2024</h3>
+        <p>The biggest international cricket event, featuring teams from around the world. Held in India.</p>
+      </div>
+      <a href=""><button class="book-btn">Book Tickets</button></a>
+    </div>
+    <div class="card">
+      <img src="resources/images/event3.jpeg" alt="Asia Cup 2024" />
+      <div class="card-content">
+        <h3>Asia Cup 2024</h3>
+        <p>The ultimate battle for Asian cricket supremacy between India, Pakistan, Sri Lanka, and more.</p>
+      </div>
+      <a href=""><button class="book-btn">Book Tickets</button></a>
+    </div>
+    <div class="card">
+      <img src="resources/images/event4.jpeg" alt="Syed Mushtaq Ali Trophy" />
+      <div class="card-content">
+        <h3>Syed Mushtaq Ali Trophy</h3>
+        <p>India's domestic T20 tournament with all state teams competing for the title. Coming in October.</p>
+      </div>
+      <a href=""><button class="book-btn">Book Tickets</button></a>
+    </div>
+    <div class="card">
+      <img src="resources/images/event5.jpeg" alt="Ranji Trophy 2024" />
+      <div class="card-content">
+        <h3>Ranji Trophy 2024</h3>
+        <p>The premier first-class cricket championship in India, featuring state and regional teams.</p>
+      </div>
+      <a href=""><button class="book-btn">Book Tickets</button></a>
+    </div>
+    <div class="card">
+      <img src="resources/images/event6.jpeg" alt="India vs Australia Test Series" />
+      <div class="card-content">
+        <h3>India vs South Africa ICC Series</h3>
+        <p>A high-octane Test series between two of the world's top cricket teams. Starts in November 2024.</p>
+      </div>
+      <a href=""><button class="book-btn">Book Tickets</button></a>
+    </div>
+  </div>
+
+  <script src="js/upcoming.js"></script>
 </body>
+
 </html>

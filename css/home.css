@@ -1,0 +1,707 @@
+:root {
+    --primary-color: #ff5722;
+    --secondary-color: rgb(109, 108, 108);
+    --background-color: #040404;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+}
+
+/* Hero Banner Section */
+/* Hero Banner Section */
+.hero {
+position: relative;
+width: 100%;
+height: 100vh;
+overflow: hidden;
+}
+
+.hero video {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+z-index: 1;
+opacity: 0.4;
+}
+
+.hero-content {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+color: white;
+z-index: 1;
+}
+
+.hero-content h1 {
+font-size: 4rem;
+font-weight: 600;
+}
+
+.hero-content p {
+font-size: 1.5rem;
+margin-bottom: 20px;
+}
+
+.hero-content a {
+padding: 12px 30px;
+background-color: var(--primary-color);
+color: white;
+text-decoration: none;
+border-radius: 5px;
+font-size: 1.2rem;
+}
+
+.hero-content a:hover {
+background-color: #e64a19;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Large devices (desktops, 1200px and above) */
+@media (min-width: 1200px) {
+.hero-content h1 {
+font-size: 4.5rem;
+}
+
+.hero-content p {
+font-size: 1.8rem;
+}
+
+.hero-content a {
+font-size: 1.3rem;
+}
+}
+
+/* Medium devices (tablets, 768px - 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+.hero {
+height: 80vh;
+}
+
+.hero-content h1 {
+font-size: 3.5rem;
+}
+
+.hero-content p {
+font-size: 1.3rem;
+}
+
+.hero-content a {
+font-size: 1.1rem;
+}
+}
+
+/* Small devices (phones, 480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+.hero {
+height: 70vh;
+}
+
+.hero-content h1 {
+font-size: 2.8rem;
+}
+
+.hero-content p {
+font-size: 1.2rem;
+}
+
+.hero-content a {
+font-size: 1rem;
+padding: 10px 25px;
+}
+}
+
+/* Extra small devices (phones below 480px) */
+@media (max-width: 479px) {
+.hero {
+height: 60vh;
+}
+
+.hero-content h1 {
+font-size: 2rem;
+}
+
+.hero-content p {
+font-size: 1rem;
+}
+
+.hero-content a {
+font-size: 0.9rem;
+padding: 8px 20px;
+}
+}
+
+/* Section Hover Animation */
+section:hover {
+transform: scale(1.02);
+transition: transform 0.3s ease-in-out;
+}
+.h h1{
+color: red;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.image-container {
+position: relative;
+width: 100%;
+height: 50vh;
+overflow: hidden;
+display: flex;
+
+justify-content: center;
+align-items: center;
+margin-bottom: 20px;
+}
+
+.image-container  h1{
+position: absolute;
+top: 0;
+z-index: 4000;
+}
+.km{
+    padding: 10px 20px;
+    font-size: larger;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--primary-color);
+}
+.hero-content a{
+    padding-inline:0px ;
+    border-radius: 50px;
+}
+
+.img-cont {
+border: 2PX SOLID red;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 1; /* Make sure the image is above the blurred background */
+}
+
+
+.img-cont img {
+border-radius: 30px;
+
+bottom: 0px;
+width: 100%;
+height: 100%;
+object-fit: contain; /* Ensures the image fits the container and maintains aspect ratio */
+position: absolute;
+z-index: 2; /* Display image above the blurred background */
+}
+
+/* Add blurred background image */
+.img-cont::before {
+content: '';
+position: absolute;
+
+bottom: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-size: cover;
+background-position: center;
+filter: blur(15px); /* Apply blur effect to the background */
+z-index: 0; /* Make sure this is behind the main image */
+opacity: 0.7; /* Slightly fade the blurred background */
+}
+
+/* Assign specific background images to each div */
+.img-cont:nth-child(1)::before {
+background-image: url('15.jpeg');
+}
+
+.img-cont:nth-child(2)::before {
+background-image: url('17.jpeg');
+}
+
+.img-cont:nth-child(3)::before {
+background-image: url('18.jpeg');
+}
+
+
+/* Ensure images cycle with display */
+@keyframes cycleImages {
+0% {
+display: block;
+}
+33% {
+display: none;
+}
+66% {
+display: none;
+}
+100% {
+display: block;
+}
+}
+
+.image-container .img-cont:nth-child(1) {
+animation: cycleImages 9s infinite;
+}
+
+.image-container .img-cont:nth-child(2) {
+animation: cycleImages 9s infinite;
+animation-delay: 3s;
+}
+
+.image-container .img-cont:nth-child(3) {
+animation: cycleImages 9s infinite;
+animation-delay: 6s;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1024px) {
+/* Adjust container height on medium devices */
+.image-container {
+height: 35vh;
+}
+
+/* Adjust button size */
+.book-now-btn {
+font-size: 1rem;
+padding: 10px 20px;
+}
+}
+
+@media screen and (max-width: 768px) {
+/* Adjust container height on tablets */
+.image-container {
+height: 30vh;
+}
+
+/* Smaller button for smaller screens */
+.book-now-btn {
+font-size: 0.9rem;
+padding: 8px 16px;
+}
+}
+
+@media screen and (max-width: 480px) {
+/* Adjust container height on mobile devices */
+.image-container {
+height: 25vh;
+}
+
+/* Further reduce button size for smaller devices */
+.book-now-btn {
+font-size: 0.8rem;
+padding: 6px 12px;
+}
+}
+
+.sponsors {
+background-color: rgb(5, 5, 5);
+padding: 50px 10%;
+text-align: center;
+position: relative;
+overflow: hidden;
+border-radius: 10px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+background-image: url('cricket-pitch-bg.jpg'); /* Cricket-themed background */
+background-size: cover;
+background-position: center;
+}
+
+.sponsors h2 {
+font-size: 2.5rem;
+margin-bottom: 30px;
+color: #ff5722; /* Cricket ball color */
+position: relative;
+z-index: 1;
+}
+
+/* Sponsor Logos */
+.sponsor-logos {
+display: flex;
+justify-content: space-around;
+align-items: center;
+position: relative;
+z-index: 1;
+}
+
+.sponsor-logos img {
+max-width: 120px;
+padding: 10px;
+transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+/* filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2)); */
+border-radius: 50%; /* Cricket-ball-like effect */
+}
+
+/* Hover effect for logos */
+.sponsor-logos img:hover {
+transform: scale(1.2) rotate(360deg); 
+box-shadow: 0 0 15px rgba(255, 87, 34, 0.8);
+}
+
+/* Add animation to continuously rotate the logos */
+@keyframes spin {
+0% {
+transform: rotate(0deg);
+}
+100% {
+transform: rotate(360deg);
+}
+}
+
+
+/* Cricket-themed background animation */
+.sponsors::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(255, 87, 34, 0.2); /* Subtle cricket-ball-like overlay */
+z-index: 0;
+mix-blend-mode: overlay; /* Adds a soft blending effect */
+animation: cricket-theme-bg 8s ease-in-out infinite alternate;
+}
+
+@keyframes cricket-theme-bg {
+0% {
+background-position: 0% 0%;
+}
+100% {
+background-position: 100% 100%;
+}
+}
+
+/* Add cricket-themed bats to section corners */
+.sponsors::after {
+content: '';
+position: absolute;
+width: 50px;
+height: 50px;
+background: url('cricket-bat-icon.png') no-repeat center center;
+background-size: contain;
+top: 10px;
+left: 10px;
+animation: cricket-bat-move 5s ease-in-out infinite alternate;
+}
+
+@keyframes cricket-bat-move {
+0% {
+transform: translateY(0px) rotate(0deg);
+}
+100% {
+transform: translateY(20px) rotate(10deg);
+}
+}
+
+/* Fan Polls & Quizzes Section */
+.fan-polls {
+    padding: 50px 10%;
+    background: url('c3.jpg') center center / cover no-repeat;
+    background-size: contain;
+
+
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+    /* Add subtle shadows for depth */
+    /* object-fit: contain; */
+}
+
+.fan-polls:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Overlay to make text stand out on the background */
+}
+
+.fan-polls h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.polls,
+.quizzes {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+
+.poll,
+.quiz {
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Cricket-field green with slight transparency */
+    padding: 25px;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    width: 45%;
+    position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.poll:hover,
+.quiz:hover {
+    transform: scale(1.05);
+    /* Hover effect to make it pop */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.poll h3,
+.quiz h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #b92b0f;
+    /* Bright yellow reminiscent of cricket jerseys */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.poll p,
+.quiz p {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #f3f3f3;
+    line-height: 1.6;
+}
+
+.poll .leaderboard,
+.quiz .leaderboard {
+    background-color: #a82902;
+    /* Use the primary accent color for buttons */
+    padding: 10px 15px;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+    display: inline-block;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.poll .leaderboard:hover,
+.quiz .leaderboard:hover {
+    background-color: #e64a19;
+    /* Darken button on hover */
+}
+
+/* Add cricket-related icons */
+.poll h3:before,
+.quiz h3:before {
+    content: '🏏';
+    margin-right: 10px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+
+    .polls,
+    .quizzes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .poll,
+    .quiz {
+        width: 100%;
+        margin: 15px 0;
+    }
+}
+
+
+/* News Updates Section */
+.news-updates {
+padding: 50px 10%;
+}
+
+.news-updates h2 {
+font-size: 2.5rem;
+margin-bottom: 30px;
+text-align: center;
+}
+
+.news-container {
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+position: relative;
+}
+
+.news-card {
+background-color: white;
+width: 30%;
+margin-bottom: 30px;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+padding: 20px;
+overflow: hidden;
+position: relative;
+transition: transform 0.3s ease, opacity 0.3s ease;
+cursor: pointer;
+z-index: 1;
+opacity: 1;
+}
+
+.news-card:hover {
+transform: scale(1.05);
+opacity: 0.8;
+z-index: 2;
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.news-card p {
+font-size: 1.1rem;
+opacity: 0.9;
+transition: font-size 0.3s ease;
+}
+
+.news-card:hover p {
+font-size: 1.2rem;
+}
+
+.news-container .news-card {
+flex-grow: 1;
+flex-basis: calc(33.333% - 20px);
+margin: 0 10px 30px;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 1024px) {
+/* For tablets and smaller laptops */
+.news-card {
+width: 45%;
+}
+}
+
+@media screen and (max-width: 768px) {
+/* For small tablets and larger mobile screens */
+.news-container .news-card {
+flex-basis: 48%;
+/* Adjust to two columns */
+}
+.news-updates h2 {
+font-size: 2rem;
+}
+}
+
+@media screen and (max-width: 480px) {
+/* For mobile devices */
+.news-container .news-card {
+flex-basis: 100%;
+margin: 0 0 30px;
+/* Full width for single-column layout */
+}
+.news-updates h2 {
+font-size: 1.8rem;
+}
+.news-card p {
+font-size: 1rem;
+}
+}
+
+
+/* Interactive Historical Moments Section */
+.historical-moments {
+    padding: 50px 10%;
+    background-color: var(--secondary-color);
+    color: rgb(247, 244, 244);
+    text-align: center;
+}
+
+.historical-moments h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.moments-gallery {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.moment {
+    width: 30%;
+    margin-bottom: 20px;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.moment:hover {
+    transform: translateY(-10px);
+}
+
+.moment img {
+    width: 100%;
+    height: 200px;
+    /* Ensures uniform height */
+    object-fit: cover;
+    /* Ensures images are not distorted */
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.moment h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.moment p {
+    font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+
+    .fixtures,
+    .sponsors,
+    .fan-polls,
+    .news-updates,
+    .historical-moments {
+        padding: 20px 5%;
+    }
+
+    .fan-polls .polls,
+    .fan-polls .quizzes {
+        flex-direction: column;
+    }
+
+    .news-container,
+    .moments-gallery {
+        flex-direction: column;
+    }
+
+    .news-card,
+    .moment {
+        width: 100%;
+    }
+}

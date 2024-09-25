@@ -3,119 +3,138 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>xyz</title>
-    <link rel="stylesheet" href="css/timeline.css">
-    <link rel="stylesheet" href="css/style.css"> <!-- Link to navbar CSS -->
-    <script src="js/navbar.js" defer></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/home.css">
 </head>
 
-<body style="cursor: url('resources/images/124163.cur'), auto;">
-    <div id="navbar"></div>
+<body>
+    <!-- Hero Section with Video -->
+    <div class="hero">
+        <video autoplay muted loop>
+            <source src="resources/images/hero1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1>Welcome to Cricket World</h1>
+            <a href="about.html"><button class="km">know more</button></a>
+            
+            
+        </div>
+    </div>
 
-    <script>
-        function loadNavbar() {
-            fetch('navbar.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('navbar').innerHTML = data;
-                    initializeNavbar();
-                })
-                .catch(error => console.error('Error loading navbar:', error));
-        }
+    <!-- Upcoming Features & Fixtures -->
+    <a href="upcoming.html">
+        <div class="h">
 
-        window.onload = loadNavbar;
-    </script>
+            <h1>UPCOMING FIXTURES</h1>
+            <div class="image-container">
+                <div class="img-cont">
+                    <img src="resources/images/15.jpeg" alt="Image 1" />
+                </div>
+                <div class="img-cont">
+                    <img src="resources/images/17.jpeg" alt="Image 2" />
+                </div>
+                <div class="img-cont">
+                    <img src="resources/images/18.jpeg" alt="Image 3" />
+                </div>
+            </div>
+        </div>
+    </a>
 
-    <section class="intro">
-        <div class="container">
-            <h1>Vertical Timeline &darr;</h1>
+    <!-- Sponsors Section -->
+    <section class="sponsors">
+        <h2>Our Sponsors</h2>
+        <div class="sponsor-logos">
+            <img src="resources/images/1.png" alt="Sponsor 1">
+            <img src="resources/images/11.png" alt="Sponsor 2">
+            <img src="resources/images/3.png" alt="Sponsor 3">
+
         </div>
     </section>
 
-    <section class="timeline">
-        <ul>
-            <li>
-                <div class="timeline-item">
-                    <time>1934</time>
-                    <p class="summary">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium...</p>
-                    <p class="more-info" style="display: none;">Here is the extended information about 1934, it will show when clicked.</p>
-                </div>
-            </li>
-            <li>
-                <div class="timeline-item">
-                    <time>1937</time>
-                    <p class="summary">Proin quam velit, efficitur vel neque vitae, rhoncus commodo mi...</p>
-                    <p class="more-info" style="display: none;">Extended information for 1937, more details about this year.</p>
-                </div>
-            </li>
-            <li>
-                <div class="timeline-item">
-                    <time>1940</time>
-                    <p class="summary">Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor...</p>
-                    <p class="more-info" style="display: none;">Extended information for 1940.</p>
-                </div>
-            </li>
-            <li>
-                <div class="timeline-item">
-                    <time>1943</time><p class="summary">Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor...</p>
-                    <p class="more-info" style="display: none;">Extended information for 1940.</p>
-                </div>
-            </li>
-            <li>
-                <div class="timeline-item">
-                    <time>1946</time> <p class="summary">Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor...</p>
-                    <p class="more-info" style="display: none;">Extended information for 1940.</p>
-                </div>
-            </li>
-            <li>
-                <div class="timeline-item">
-                    <time>1956</time> <p class="summary">Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor...</p>
-                    <p class="more-info" style="display: none;">Extended information for 1940.</p>
-                </div>
-            </li>
-            <li>
-                <div class="timeline-item">
-                    <time>1957</time><p class="summary">Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor...</p>
-                    <p class="more-info" style="display: none;">Extended information for 1940.</p>
-                </div>
-            </li>
-            <li>
-                <div class="timeline-item">
-                    <time>1967</time> <p class="summary">Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor...</p>
-                    <p class="more-info" style="display: none;">Extended information for 1940.</p>
-                </div>
-            </li>
-            <li>
-                <div class="timeline-item">
-                    <time>1977</time> <p class="summary">Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor...</p>
-                    <p class="more-info" style="display: none;">Extended information for 1940.</p>
-                </div>
-            </li>
-            <li>
-                <div class="timeline-item">
-                    <time>1985</time> <p class="summary">Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor...</p>
-                    <p class="more-info" style="display: none;">Extended information for 1940.</p>
-                </div>
-            </li>
-            <li>
-                <div class="timeline-item">
-                    <time>2000</time> <p class="summary">Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor...</p>
-                    <p class="more-info" style="display: none;">Extended information for 1940.</p>
-                </div>
-            </li>
-            <li>
-                <div class="timeline-item">
-                    <time>2005</time> <p class="summary">Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor...</p>
-                    <p class="more-info" style="display: none;">Extended information for 1940.</p>
-                </div>
-            </li>
-        </ul>
+    <!-- Fan Polls & Quizzes Section -->
+    <section class="fan-polls">
+
+        <h2>Fan Polls & Quizzes</h2>
+        <div class="polls">
+            <div class="poll">
+                <h3>Who will win the next match?</h3>
+                <p>India</p>
+                <p>Australia</p>
+                <p>England</p>
+                <p>South Africa</p>
+                <div class="leaderboard">Vote Now</div>
+            </div>
+            <div class="poll">
+                <h3>Best All-Rounder of the Decade?</h3>
+                <p>Ben Stokes</p>
+                <p>Ravindra Jadeja</p>
+                <p>Shakib Al Hasan</p>
+                <p>Hardik Pandya</p>
+                <div class="leaderboard">Vote Now</div>
+            </div>
+        </div>
+        <div class="quizzes">
+            <div class="quiz">
+                <h3>Cricket Trivia</h3>
+                <p>Test your cricket knowledge with some tricky questions. Can you top the leaderboard?</p>
+                <div class="leaderboard">Start Quiz</div>
+            </div>
+            <div class="quiz">
+                <h3>Match Predictions</h3>
+                <p>Guess the results of upcoming matches and win exciting prizes. Are you ready?</p>
+                <div class="leaderboard">Start Predicting</div>
+            </div>
+        </div>
     </section>
 
-    <script type="module" src="js/timeline.js"></script>
-    <script src="js/expandTimeline.js" defer></script>
+    <!-- News Updates Section -->
+    <section class="news-updates">
+        <h2>Latest Cricket News</h2>
+        <div class="news-container">
+            <div class="news-card">
+                <p>India defeats Australia in a thrilling final match to lift the ODI World Cup trophy! The match was
+                    decided in the last over, with India winning by just 2 wickets in a nail-biting finish.</p>
+            </div>
+            <div class="news-card">
+                <p>Virat Kohli becomes the fastest player to reach 12,000 runs in international cricket, breaking yet
+                    another record and solidifying his legacy as one of the all-time greats of the game.</p>
+            </div>
+            <div class="news-card">
+                <p>England announces their squad for the upcoming T20 World Cup, featuring several new talents alongside
+                    experienced players. Can the new generation lead England to victory?</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Interactive Historical Moments Section -->
+    <section class="historical-moments">
+        <h2>Historical Moments</h2>
+        <div class="moments-gallery">
+            <div class="moment"
+                onclick="showMomentInfo('Sachin Tendulkar\'s innings in 1998 is considered one of the greatest in cricket history.')">
+                <img src="resources/images/7.jpeg" alt="Sachin Tendulkar 1998">
+                <h3>Moment 1</h3>
+                <p>Legendary innings by Sachin Tendulkar in 1998.</p>
+            </div>
+            <div class="moment"
+                onclick="showMomentInfo('India\'s victory in the 2007 T20 World Cup brought new excitement to the cricketing world.')">
+                <img src="resources/images/5.png" alt="India T20 World Cup 2007">
+                <h3>Moment 2</h3>
+                <p>First-ever T20 World Cup victory for India in 2007.</p>
+            </div>
+            <div class="moment"
+                onclick="showMomentInfo('The West Indies dominated international cricket during the 1970s and 1980s.')">
+                <img src="resources/images/9.jpeg" alt="West Indies Dominance 1970s">
+                <h3>Moment 3</h3>
+                <p>West Indies' dominance in the 1970s and 1980s.</p>
+            </div>
+        </div>
+    </section>
+    <script src="js/home.js"></script>
 </body>
 
 </html>
-

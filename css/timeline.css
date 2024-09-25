@@ -1,7 +1,7 @@
 :root {
-    --primary-color: #f45b69;
-    --secondary-color: #456990;
-    --tertiary-color: #fff;
+    --primary-color: #50223C; /* Primary color */
+    --secondary-color: #F0DAC5; /* Secondary color */
+    --tertiary-color: #040404;
 }
 
 *,
@@ -22,24 +22,21 @@ body {
     color: var(--tertiary-color);
     overflow-x: hidden;
     padding-bottom: 50px;
-    cursor: url('resources/images/124163.cur'), auto !important;
 }
 
 /* INTRO SECTION */
 .intro {
     background: var(--primary-color);
     padding: 100px 0;
-    /* if you want the top to be sticky uncomment the code  below */
-    /* position: sticky;
-    top: 5vh;
-    z-index: 50; */
 }
 
+/* Container with padding for better alignment on small screens */
 .container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 100vw;
     margin: 0 auto;
     text-align: center;
+    padding: 0 20px;
 }
 
 h1 {
@@ -55,7 +52,7 @@ h1 {
 .timeline ul li {
     list-style-type: none;
     position: relative;
-    width: 6px;
+    width: 8px; /* Increased width for better visibility */
     margin: 0 auto;
     padding-top: 50px;
     background: var(--tertiary-color);
@@ -77,38 +74,60 @@ h1 {
 .timeline ul li div {
     position: relative;
     bottom: 0;
-    width: 400px;
+    width: 35vw; /* Use viewport width for better scaling */
+    max-width: 400px; /* Set a max width */
     padding: 15px;
     background: var(--primary-color);
-}
-
-.timeline ul li div::before {
-    content: "";
-    position: absolute;
-    bottom: 7px;
-    width: 0;
-    height: 0;
-    border-style: solid;
+    will-change: transform, opacity; /* Optimize transitions */
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
 }
 
 .timeline ul li:nth-child(odd) div {
     left: 45px;
+    transform: translate3d(200px, 0, 0);
 }
 
 .timeline ul li:nth-child(odd) div::before {
+    content: "";
+    position: absolute;
+    bottom: 7px;
     left: -15px;
     border-width: 8px 16px 8px 0;
+    border-style: solid;
     border-color: transparent var(--primary-color) transparent transparent;
 }
 
 .timeline ul li:nth-child(even) div {
     left: -439px;
+    transform: translate3d(-200px, 0, 0);
 }
 
 .timeline ul li:nth-child(even) div::before {
+    content: "";
+    position: absolute;
+    bottom: 7px;
     right: -15px;
     border-width: 8px 0 8px 16px;
+    border-style: solid;
     border-color: transparent transparent transparent var(--primary-color);
+}
+
+.timeline ul li.in-view div {
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+}
+
+.timeline ul li.in-view::after {
+    background: var(--primary-color);
+}
+
+/* Hover effect on timeline items */
+.timeline ul li div:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 time {
@@ -118,51 +137,7 @@ time {
     margin-bottom: 8px;
 }
 
-/* EXPANDABLE ITEMS */
-.timeline-item {
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.timeline-item.expanded .more-info {
-    display: block;
-}
-
-.timeline-item.expanded {
-    background-color: var(--primary-color);
-    padding: 20px;
-}
-
-/* EFFECTS */
-.timeline ul li::after {
-    transition: background 0.5s ease-in-out;
-}
-
-.timeline ul li.in-view::after {
-    background: var(--primary-color);
-}
-
-.timeline ul li div {
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
-}
-
-.timeline ul li:nth-child(odd) div {
-    transform: translate3d(200px, 0, 0);
-}
-
-.timeline ul li:nth-child(even) div {
-    transform: translate3d(-200px, 0, 0);
-}
-
-.timeline ul li.in-view div {
-    transform: none;
-    visibility: visible;
-    opacity: 1;
-}
-
-/* MEDIA QUERIES */
+/* MOBILE MEDIA QUERIES */
 @media screen and (max-width: 900px) {
     .timeline ul li div {
         width: 250px;
@@ -179,11 +154,9 @@ time {
     }
 
     .timeline ul li div {
-        width: calc(100vw - 91px);
-    }
-
-    .timeline ul li:nth-child(even) div {
-        left: 45px;
+        width: calc(100vw - 50px); /* Adjust width for mobile */
+        margin-left: 25px; /* Centering for smaller screens */
+        left: auto; /* Remove left alignment */
     }
 
     .timeline ul li:nth-child(even) div::before {
@@ -192,11 +165,423 @@ time {
         border-color: transparent var(--primary-color) transparent transparent;
     }
 }
-/* Add this to the existing navbar CSS */
+
+/* STICKY NAVBAR */
 #navbar {
     position: sticky;
     top: 0;
-    z-index: 1000; /* Ensures it stays on top of other elements */
+    z-index: 1000;
     width: 100%;
-    background-color: var(--primary-color); /* Example background color */
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
 }
+
+#navbar.scrolled {
+    background-color: var(--secondary-color); /* Change color on scroll */
+}
+
+/* EFFECTS */
+.timeline ul li::after {
+    transition: background 0.5s ease-in-out;
+}
+
+/* Add this to improve navbar responsiveness */
+@media (max-width: 768px) {
+    #navbar {
+        padding: 10px;
+    }
+}
+:root {
+    --primary-color: #50223C; /* Primary color */
+    --secondary-color: #F0DAC5; /* Secondary color */
+    --tertiary-color: #040404;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--secondary-color);
+    color: var(--tertiary-color);
+    overflow-x: hidden;
+    padding-bottom: 50px;
+}
+
+/* INTRO SECTION */
+.intro {
+    background: var(--primary-color);
+    padding: 100px 0;
+}
+
+/* Container with padding for better alignment on small screens */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+/* TIMELINE */
+.timeline ul {
+    background: var(--secondary-color);
+    padding: 50px 0;
+}
+
+.timeline ul li {
+    list-style-type: none;
+    position: relative;
+    width: 8px;
+    /* Increased width for better visibility */
+    margin: 0 auto;
+    padding-top: 50px;
+    background: var(--tertiary-color);
+}
+
+.timeline ul li::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: inherit;
+    z-index: 1;
+}
+
+.timeline ul li div {
+    position: relative;
+    bottom: 0;
+    width: 35vw;
+    /* Use viewport width for better scaling */
+    max-width: 400px;
+    /* Set a max width */
+    padding: 15px;
+    background: var(--primary-color);
+    will-change: transform, opacity;
+    /* Optimize transitions */
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.timeline ul li:nth-child(odd) div {
+    left: 45px;
+    transform: translate3d(200px, 0, 0);
+}
+
+.timeline ul li:nth-child(odd) div::before {
+    content: "";
+    position: absolute;
+    bottom: 7px;
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-style: solid;
+    border-color: transparent var(--primary-color) transparent transparent;
+}
+p{
+    color: var(--secondary-color);
+}
+
+.timeline ul li:nth-child(even) div {
+    left: -439px;
+    transform: translate3d(-200px, 0, 0);
+}
+
+.timeline ul li:nth-child(even) div::before {
+    content: "";
+    position: absolute;
+    bottom: 7px;
+    right: -15px;
+    border-width: 8px 0 8px 16px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--primary-color);
+}
+
+.timeline ul li.in-view div {
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+}
+
+.timeline ul li.in-view::after {
+    background: var(--primary-color);
+}
+
+/* Hover effect on timeline items */
+.timeline ul li div:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+time {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--secondary-color);
+}
+
+/* STICKY NAVBAR */
+#navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+/* General styles for page content */
+.page-content {
+    transition: filter 0.3s ease;
+}
+
+
+.overlay {
+    position: fixed;
+    top: 5vh;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+.hidden {
+    display: none;
+    /* Hide by default */
+}
+
+.overlay-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 90%;
+    /* Responsive max width */
+    width: 900px;
+    /* Fixed width for larger screens */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    /* Prevent overflow */
+}
+
+.team {
+    display: flex;
+    overflow-x: auto;
+    /* Enable horizontal scrolling */
+    scroll-behavior: smooth;
+    /* Smooth scrolling */
+    overflow-y: auto;
+}
+
+/* .img-cont {
+    flex: 0 0 auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    color: white;
+    font-size: 24px;
+} */
+.img-cont {
+    text-align: center;
+    display: inline-block;
+    margin: 10px;
+    width: 100px; /* Adjust width according to the size you prefer */
+}
+
+.img-cont img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image fits well within the circle */
+    border: 2px solid #ddd; /* Optional border */
+}
+
+.img-cont p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+.team::-webkit-scrollbar {
+    height: 8px;
+    /* Height of the scrollbar */
+}
+
+.team::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+#navbar.scrolled {
+    background-color: var(--secondary-color);
+    /* Change color on scroll */
+}
+
+.overlay .overlay-content h1 {
+    color: var(--secondary-color);
+}
+
+.tournaments {
+    max-height: 500px;
+    /* Set a maximum height for the container */
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+    padding: 15px;
+    /* Optional: Add some padding */
+    background: var(--secondary-color);
+    /* Optional: Background color */
+    border: 1px solid #ddd;
+    /* Optional: Border for better visibility */
+    border-radius: 5px;
+    /* Optional: Rounded corners */
+}
+
+.tourList {
+    margin-bottom: 15px;
+    /* Space between items */
+    padding: 10px;
+    /* Padding for each item */
+    background: var(--secondary-color);
+    /* Background for each item */
+    border: 1px solid #ccc;
+    /* Border for each item */
+    border-radius: 5px;
+    color: var(--primary-color);
+    /* Rounded corners for items */
+}
+.tourList p{
+    color: var(--primary-color);
+}
+
+/* EFFECTS */
+.timeline ul li::after {
+    transition: background 0.5s ease-in-out;
+}
+#closeOverlay{
+    padding: 7px 10px;
+    border: none;
+    box-shadow: inset;
+    background-color: red;
+    color: #fff;
+    border-radius: 50px;
+   
+}
+#butDiv {
+    display: flex;
+    justify-content: flex-end; /* Align the button to the right */
+    padding: 10px; /* Optional: add padding for some space */
+  }
+
+/* MEDIA QUERIES FOR MOBILE COMPATIBILITY */
+@media (max-width: 768px) {
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: var(--secondary-color);
+        color: var(--tertiary-color);
+        overflow-x: hidden;
+    }
+
+     .intro {
+        background: var(--primary-color);
+        width: 100vw;
+        padding-bottom: 10px;
+    }
+
+   .intro .container h1 {
+        font-size: 150%;
+    }
+
+    #navbar {
+        width: 100vw;
+        position: fixed;
+        top: 0px;
+    }
+    ul{
+        width: 100vw;
+    }
+    .timeline ul li:nth-child(odd) div,
+    .timeline ul li:nth-child(even) div {
+        left: 0; /* Reset the left positioning */
+        transform: translate3d(400px, 0, 0); /* Move in from the right */
+        margin-left: 25px ;
+        width: 70vw;
+    }
+
+    .timeline ul li:nth-child(even) div {
+        transform: translate3d(400px, 0, 0); /* Ensure even items also come from the right */
+        margin-left: 25px ;
+        width: 70vw;
+    }
+
+    .timeline ul li.in-view div {
+        transform: none; /* Reset the transform for items in view */
+    }
+    .timeline ul li:nth-child(odd) div::before,
+    .timeline ul li:nth-child(even) div::before {
+        content: none; /* Remove the triangular pointers */
+    }
+    .timeline {
+        /* Ensure the timeline is not centered */
+        text-align: left; /* Align text to the left */
+    }
+    
+    .timeline ul {
+        margin-left: 20px; /* Reset margin if necessary */
+        padding-left: 0; /* Reset padding if necessary */
+        width: 80vw;
+    }
+    
+    .timeline ul li {
+        /* Adjust the list items as needed */
+        margin: 0; /* Reset margin */
+        padding-top: 50px; /* Keep the padding for spacing */
+        /* You might also want to adjust width or other styles here */
+    }
+    #overlay{
+        width: 100vw;
+    }
+    .overlay-content {
+        background: var(--primary-color);
+        padding: 20px;
+        border-radius: 8px;
+        width: 90%;
+        height: 80%;
+        /* Fixed width for larger screens */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        top: 0;
+        overflow: hidden;
+        /* Prevent overflow */
+    }
+
+}
+

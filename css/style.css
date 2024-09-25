@@ -1,7 +1,7 @@
 :root {
-    --primary-color: #f45b69; /* Primary color */
-    --secondary-color: #456990; /* Secondary color */
-    --tertiary-color: #fff;     /* White */
+    --primary-color: #50223C; /* Primary color */
+    --secondary-color: #F0DAC5; /* Secondary color */
+    --tertiary-color: #040404;     /* White */
 }
 
 body {
@@ -15,7 +15,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--primary-color);
+    background: radial-gradient(#ffffff, #f0dac5);
+    /* background: var(--secondary-color); */
     padding: 10px 20px;
     position: sticky;
     top: 0;
@@ -31,28 +32,48 @@ body {
     font-size: 1.5em;
 }
 
+.navbar-collapse a{
+    text-decoration: none;
+}
+.navbar-collapse .down{
+    color: var(--secondary-color);
+    font-weight: bolder;
+    font-size: 15px;
+    padding: 15px 20px;
+    position: absolute;
+    bottom: 10px;
+}
+
 /* Navbar toggle icon on the left */
 .navbar-toggle {
-    cursor: url('resources/images/cricketball.cur') , pointer;
-    background-color: var(--primary-color);
+    background-image: url('image1.png'); /* Default image */
+    background-size: cover;
     border: none;
     color: var(--tertiary-color);
     font-size: 16px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 24px;
-    width: 30px;
+    height: 45px;
+    width: 45px;
 }
 
 .navbar-toggle:hover {
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    border-radius: 50px;
 }
 
 .icon-bar {
     width: 100%;
-    background-color: var(--primary-color);
+    /* background-color: var(--primary-color); */
     transition: background-color 0.3s ease;
+    height: 45px;
+    width: 45px;
+}
+.icon-bar img{
+    height: 45px;
+    width: 45px;
 }
 
 /* The sliding navbar menu (hidden by default) */
@@ -77,7 +98,7 @@ body {
 /* Navbar elements styling */
 .nav-elements {
     padding: 15px 20px;
-    color: var(--tertiary-color);
+    color: var(--secondary-color);
     font-size: 18px;
     background-color: var(--primary-color);
     transition: background-color 0.3s, transform 0.3s ease;
@@ -95,3 +116,32 @@ body {
     background-color: #456990; /* Just for visibility */
     height: 100vh;
 }
+
+
+.hide {
+    display: none;
+  }
+
+  .logged-in-user {
+    font-weight: bolder;
+    font-size: 20px;
+    padding: 15px 20px;
+  }
+
+  .navbar-collapse a {
+    text-decoration: none;
+    color: aliceblue;
+  }
+
+  .navbar-collapse .bottom {
+    color: var(--secondary-color);
+    font-weight: bolder;
+    font-size: 15px;
+    padding: 15px 20px;
+    position: absolute;
+    bottom: 20px;
+  }
+
+  .Logout{
+    cursor: pointer;
+  }

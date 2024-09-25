@@ -8,30 +8,62 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: var(--primary-color);
-    cursor: url('resources/images/124163.cur'), auto; /* Custom cursor */
+    background-color: var(--primary-color); /* Custom cursor */
 }
 
 .image-container {
     position: relative;
-    width: 100%; /* Adjust as needed */
+    width: 100%;
     height: 40vh; /* Height of the container */
     overflow: hidden; /* Hide overflowing images */
+    display: flex; /* Use flexbox to center the foreground image */
+    justify-content: center;
 }
 
 .img-cont {
-    position: absolute; /* Position images on top of each other */
+    /* position: absolute;  */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    display: none; /* Hide all images initially */
+    display: flex; /* Hide all images initially */
+    justify-content: center;
+    
 }
 
-.img-cont img {
-    width: 100%; /* Adjust as needed */
-    height: auto; /* Maintain aspect ratio */
+.background-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
+.foreground-image{
+    position: absolute; /* Position absolute to allow centering */
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); /* Adjust to center */
+    z-index: 1; /* Ensure it appears above the background */
+    height: 100%;
+}
+
+.background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(10px); /* Blur the background image */
+    z-index: 1; /* Place the background image behind the foreground */
+}
+
+.foreground-image img {
+    height: 100%;
+    object-fit: contain; /* Maintain the aspect ratio while fitting by height */
+    z-index: 2; /* Place the foreground image above the background */
+}
+
+/* Ensure the first image is visible */
+.image-container .img-cont:first-child {
+    display: block;
+}
+
 
 /* Existing styles for scroll-container if needed */
 .scroll-container {
@@ -68,15 +100,75 @@ body, html {
 .card:hover {
     transform: scale(1.05); /* Scale effect on hover */
 }
+.card img {
+    width: 100%;
+    height: 200px; /* Adjust the height of the image */
+    object-fit: cover;
+    border-radius: 15px;
+}
+.card-content {
+    padding-inline: 15px;
+}
+
+.hide {
+    display: none;
+  }
+
+  .logged-in-user {
+    font-weight: bolder;
+    font-size: 20px;
+    padding: 15px 20px;
+  }
+
+  .navbar-collapse a {
+    text-decoration: none;
+    color: aliceblue;
+  }
+
+  .navbar-collapse .bottom {
+    color: var(--secondary-color);
+    font-weight: bolder;
+    font-size: 15px;
+    padding: 15px 20px;
+    position: absolute;
+    bottom: 20px;
+  }
+.book-btn{
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    transition: background-color 0.3s ease;
+}
+.book-btn:hover{
+    background-color: #f53c4c;
+}
+  .Logout{
+    cursor: pointer;
+  }
+
 
 @media (max-width: 768px) {
     .card-container {
         grid-template-columns: repeat(2, 1fr); /* 2 cards per row on medium screens */
     }
+    #navbar {
+        width: 100vw;
+        position: fixed;
+        top: 0px;
+    }
+    
 }
 
 @media (max-width: 480px) {
     .card-container {
         grid-template-columns: 1fr; /* 1 card per row on small screens */
     }
+    #navbar {
+        width: 100vw;
+        position: fixed;
+        top: 0px;
+    }
+    
 }
